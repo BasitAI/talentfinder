@@ -1,6 +1,15 @@
+# Python cache
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment
 .env
-*.pyc
-.DS_Store
-.vscode/
-.idea/
+.env.*
+.venv/
+venv/
+env/
+
+# Streamlit
+.streamlit/

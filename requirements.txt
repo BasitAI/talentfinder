@@ -1,33 +1,11 @@
-# --- Core framework ---
 streamlit
-pandas
-numpy
-requests
-plotly
-
-# --- LangChain Ecosystem ---
 langchain
-langchain-core
-langchain-community
 langchain-openai
 langgraph
-chromadb
-
-# --- Model Providers ---
-openai
+langchain-community
 groq
-langchain-groq
-langchain-google-genai
-
-# --- Agentic + Workflow Tools ---
 agno
-crewai
-crewai-tools
-
-# --- Additional Utilities ---
-duckduckgo-search
-fastapi
-uvicorn
-python-dotenv
-yfinance
-beautifulsoup4
+chromadb
+openai
+pandas
+requests

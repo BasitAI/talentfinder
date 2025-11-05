@@ -4,12 +4,15 @@ pandas==2.2.2
 requests==2.32.3
 python-dotenv==1.0.1
 
-# --- LangChain + LangGraph (stable pair, Nov 2025) ---
+# --- LangChain + LangGraph (stable on Python 3.13) ---
 langchain==0.3.13
-langchain-core==0.3.23
+langchain-core==0.3.26
 langchain-community==0.3.9
 langgraph==0.2.26
 langsmith==0.1.125
 
 # --- OpenAI SDK ---
 openai==1.51.2
+
+# --- Optional utilities ---
+typing-extensions>=4.9.0

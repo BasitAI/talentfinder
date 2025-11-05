@@ -4,9 +4,9 @@ pandas==2.2.2
 requests==2.32.3
 python-dotenv==1.0.1
 
-# --- LangChain + LangGraph (verified working combo) ---
+# --- LangChain + LangGraph (verified for Python 3.13, Nov 2025) ---
 langchain==0.3.8
-langchain-core==0.3.15
+langchain-core==0.3.21
 langchain-community==0.3.5
 langgraph==0.2.24
 langsmith==0.1.20

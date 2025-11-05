@@ -1,14 +1,16 @@
-# --- Streamlit + Base Tools ---
+# --- Streamlit + Essentials ---
 streamlit==1.39.0
 pandas==2.2.2
 requests==2.32.3
 python-dotenv==1.0.1
 
-# --- LangChain ecosystem (modular) ---
-langchain==0.3.7
-langchain-core==0.3.12
-langchain-community==0.3.2
-langgraph==0.2.22
+# --- LangChain + LangGraph (tested combo for Python 3.13) ---
+langchain==0.3.8
+langchain-core==0.3.15
+langchain-community==0.3.5
+langgraph==0.2.24
+langsmith==0.2.3
+tiktoken==0.7.0
 
 # --- OpenAI SDK ---
 openai==1.51.2

@@ -34,7 +34,9 @@ except Exception:
 
 from langgraph.graph import StateGraph, END
 # from langchain_core.messages import HumanMessage, SystemMessage
-from langchain.chat_models import ChatOpenAI
+# from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
+
 # from langchain_core.output_parsers import JsonOutputParser
 
 # Load env (optional)

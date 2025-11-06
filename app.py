@@ -1,4 +1,5 @@
 # app.py
+
 import os
 import time
 import requests
@@ -181,16 +182,22 @@ class CandidateState(TypedDict):
 def create_candidate_evaluator():
     """Create the LangGraph workflow for candidate evaluation"""
 
-    # --- Select model (with fallback support) ---
+      # --- Select model (with fallback support) ---
     model_name = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+
+    # Check API key validity
+    if not OPENAI_API_KEY or not OPENAI_API_KEY.startswith("sk-"):
+        st.error("❌ Missing or invalid OpenAI API key. Please add it under Streamlit → Settings → Secrets.")
+        st.stop()
 
     try:
         llm = ChatOpenAI(
             model=model_name,
             temperature=0.0,
             max_tokens=256,
-            api_key=OPENAI_API_KEY
+            openai_api_key=OPENAI_API_KEY  # ✅ Correct argument for new SDK
         )
+        st.info(f"✅ Model '{model_name}' initialized successfully.")
     except Exception as e:
         st.warning(f"⚠️ Model '{model_name}' unavailable or key invalid: {e}. Trying fallback model 'gpt-4o'...")
         try:
@@ -198,11 +205,14 @@ def create_candidate_evaluator():
                 model="gpt-4o",
                 temperature=0.0,
                 max_tokens=256,
-                api_key=OPENAI_API_KEY
+                openai_api_key=OPENAI_API_KEY  # ✅ Consistent fix
             )
+            st.success("✅ Fallback model 'gpt-4o' initialized successfully.")
         except Exception as err:
             st.error(f"❌ Unable to initialize ChatOpenAI model: {err}")
             st.stop()
+
+
 
     # --- Define system prompt ---
     system_prompt = SystemMessage(content="""You are an AI recruiter. Your task is to evaluate candidates from various platforms for a given job description.

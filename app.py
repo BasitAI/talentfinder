@@ -35,8 +35,11 @@ except Exception:
 from langgraph.graph import StateGraph, END
 # from langchain_core.messages import HumanMessage, SystemMessage
 # from langchain.chat_models import ChatOpenAI
-from langchain_community.chat_models import ChatOpenAI
-
+# --- ChatOpenAI import (fixes "proxies" error) ---
+try:
+    from langchain_community.chat_models import ChatOpenAI  # ✅ new correct import
+except ImportError:
+    from langchain.chat_models import ChatOpenAI  # fallback for old environments
 # from langchain_core.output_parsers import JsonOutputParser
 
 # Load env (optional)
